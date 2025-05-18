@@ -8,11 +8,12 @@ body {
     justify-content: center;
     min-height: 100vh;
     background-color: #e3f2fd;
+    color: #fff;
 }
 
 .container {
     width: 780px;
-    border: 1px solid red;
+    background-color: black;
     border-radius: 20px;
     padding: 35px 40px;
 }
@@ -43,4 +44,39 @@ header .column span {
     border-radius: 30px;
     background-color: #4b4b4b;
     cursor: pointer;
+    position: relative;
+}
+
+.keys_check input::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-color: #8c8c8c;
+    position: absolute;
+    left: 0.3rem;
+    border-radius: inherit;
+
+    top: 50%;
+    transform: translateY(-50%);
+    /* Como as Duas Propriedades Trabalham Juntas:**
+        1.  **`top: 50%;`**: Posiciona a **borda superior** do elemento absoluto no centro vertical do seu pai relativo.
+        2.  **`transform: translateY(-50%);`**: Desloca o elemento 50% da sua **própria altura** para cima.
+        Ao combinar essas duas propriedades, você primeiro posiciona a borda superior no centro e, em seguida, "puxa" o elemento de volta pela metade da sua altura. O resultado é que o **ponto central** do elemento absoluto coincide com o ponto central do seu pai relativo, centralizando-o perfeitamente.
+    **Analogia Visual:**
+    Pense em tentar equilibrar uma régua no seu dedo.
+    * Se você coloca o dedo na ponta da régua (`top: 0%;`), ela obviamente não estará equilibrada.
+    * Se você coloca o dedo no meio da régua (`top: 50%;`), a ponta ainda estará pendendo para um lado.
+    * Para equilibrar a régua perfeitamente, você precisa colocar o dedo no centro (`top: 50%;`) e então ajustar a régua para que o ponto de equilíbrio (o centro da régua) esteja exatamente sobre o seu dedo (`transform: translateY(-50%);`).
+    */
+    transition: all 0.3s ease;
+}
+
+.keys_check input:checked::before {
+    left: 2.1rem;
+    background-color: #8c8c8c;
+}
+
+.piano_keys {
+    display: flex;
+    margin-top: 40px;
 }
