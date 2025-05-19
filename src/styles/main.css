@@ -123,12 +123,12 @@ header .column span {
     transform: translateX(-50%);
 }
 
-.piano_keys .white:active {
+.piano_keys .white.active {
     box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
     background: linear-gradient(to bottom #fff 0%, #eee 100%);
 }
 
-.piano_keys .black:active {
+.piano_keys .black.active {
     box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.1);
     background: linear-gradient(to bottom #000, #434343);
 }
