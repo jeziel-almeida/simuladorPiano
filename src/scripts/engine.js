@@ -4,6 +4,8 @@ let audio = new Audio("src/tunes/a.wav")
 
 let mapedKeys = []
 
+const volumeSlider = document.querySelector(".volume_slider input")
+
 const playTune = (key) => {
 
     audio.src = `src/tunes/${key}.wav`;
@@ -34,3 +36,9 @@ document.addEventListener("keydown", (e) => {
     }
     
 })
+
+const handleVolume = (e) => {
+    audio.volume = e.target.value
+}
+
+volumeSlider.addEventListener("input", handleVolume)
