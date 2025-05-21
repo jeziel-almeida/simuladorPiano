@@ -5,6 +5,7 @@ let audio = new Audio("src/tunes/a.wav")
 let mapedKeys = []
 
 const volumeSlider = document.querySelector(".volume_slider input")
+const keysCheck = document.querySelector(".keys_check input")
 
 const playTune = (key) => {
 
@@ -42,3 +43,11 @@ const handleVolume = (e) => {
 }
 
 volumeSlider.addEventListener("input", handleVolume)
+
+const showHideKeys = () => {
+    pianoKeys.forEach((key) => {
+        key.classList.toggle("hide")
+    })
+}
+
+keysCheck.addEventListener("click", showHideKeys)
